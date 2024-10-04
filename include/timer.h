@@ -19,9 +19,9 @@ void activate_on_break();
 
 void deactivate_on_break();
 
-gboolean update_timer(gpointer label);
+gboolean update_timer(gpointer user_data);
 
-void start_timer(GtkWidget *widget, gpointer label);
+void start_timer(GtkWidget *widget, gpointer user_data);
 
 void stop_timer(GtkWidget *widget, gpointer label);
 
