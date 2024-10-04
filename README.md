@@ -9,6 +9,8 @@ The HUD/GUI is extremely minimalist once the purpose of the project is to have a
 
 C-timer is designed to beep an alert every break time. The application will also generate a log file containing the details of the time spent.
 
+Every break time (that should be controlled by the user) will start again with the interaction with the <strong>start</strong> button.
+
 ## Requirements
 The application uses the [gtk](https://www.gtk.org/) library, which are needed to run the project.
 Once the user has this dependency installed, the application is ready to be compiled and used.
