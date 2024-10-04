@@ -49,9 +49,7 @@ int main(int argc, char *argv[]) {
     g_signal_connect(start_button, "clicked", G_CALLBACK(start_timer), label);
     g_signal_connect(start_button, "clicked", G_CALLBACK(deactivate_on_break), arg_data);
  
- 
     g_signal_connect(stop_button, "clicked", G_CALLBACK(stop_timer), NULL);
-    // g_signal_connect(stop_button, "clicked", G_CALLBACK(activate_on_break), NULL); 
 
     g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
 
