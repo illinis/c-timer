@@ -45,8 +45,10 @@ int main(int argc, char *argv[]) {
     stop_button = gtk_button_new_with_label("Stop");
     gtk_box_pack_start(GTK_BOX(vbox), stop_button, TRUE, TRUE, 0);
     gtk_widget_set_halign(stop_button, GTK_ALIGN_CENTER); 
-
-    g_signal_connect(start_button, "clicked", G_CALLBACK(start_timer), label);
+    
+    AppData app_data = { label, window};
+    
+    g_signal_connect(start_button, "clicked", G_CALLBACK(start_timer), &app_data);
     g_signal_connect(start_button, "clicked", G_CALLBACK(deactivate_on_break), arg_data);
  
     g_signal_connect(stop_button, "clicked", G_CALLBACK(stop_timer), NULL);
