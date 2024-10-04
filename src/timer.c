@@ -12,10 +12,6 @@ void initial_setup(int argc, char* argv[]){
   parse_break_time_countdown(argc, argv, &break_time);
 }
 
-void activate_on_break(){
-  on_break = TRUE;
-}
-
 void deactivate_on_break(GtkWidget *widget, gpointer user_data){
   if(on_break){
 
@@ -35,7 +31,9 @@ gboolean update_timer(gpointer label) {
     time_remaining--;
 
     if(break_time > 1) break_time--;
-    else on_break = TRUE;
+    else {
+      on_break = TRUE;
+    }
 
     char time_str[32];
     snprintf(time_str, sizeof(time_str), "%02d:%02d - %02d:%02d", time_remaining / 60, time_remaining % 60, break_time / 60, break_time % 60);
