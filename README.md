@@ -12,7 +12,7 @@ C-timer is designed to beep an alert every break time. The application will also
 Every break time (that should be controlled by the user) will start again with the interaction with the <strong>start</strong> button.
 
 ## Requirements
-The application uses the [gtk](https://www.gtk.org/) library, which are needed to run the project.
+The application uses the [GTK](https://www.gtk.org/) library, which is needed to run the project.
 Once the user has this dependency installed, the application is ready to be compiled and used.
 
 ## Compiling and Running the Application
