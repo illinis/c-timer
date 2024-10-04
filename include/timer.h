@@ -8,6 +8,10 @@ typedef struct {
   char** argv;
 } ArgData;
 
+typedef struct {
+  GtkWidget *label;
+  GtkWidget *window;
+} AppData;
 
 void initial_setup(int argc, char* argv[]);
 
