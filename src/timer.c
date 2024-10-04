@@ -26,13 +26,22 @@ void deactivate_on_break(GtkWidget *widget, gpointer user_data){
   }
 }
 
-gboolean update_timer(gpointer label) {
+gboolean update_timer(gpointer user_data) {
+  AppData *app_data = (AppData *)user_data;
+  GtkWidget *label = app_data->label;
+
   if (time_remaining > 0 && !on_break) {
     time_remaining--;
 
     if(break_time > 1) break_time--;
     else {
       on_break = TRUE;
+      
+      GdkDisplay *display = gdk_display_get_default();
+      if (display != NULL) {
+        gdk_display_beep(display);
+      }
+      gtk_window_present(GTK_WINDOW(app_data->window));
     }
 
     char time_str[32];
@@ -52,9 +61,10 @@ gboolean update_timer(gpointer label) {
   return TRUE;
 }
 
-void start_timer(GtkWidget *widget, gpointer label) {
+void start_timer(GtkWidget *widget, gpointer user_data) {
+  AppData *app_data = (AppData *)user_data;
   if (!running) {
-    timer_id = g_timeout_add(1000, update_timer, label);
+    timer_id = g_timeout_add(1000, update_timer, app_data);
     running = TRUE;
   }
 }
