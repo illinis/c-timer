@@ -19,20 +19,17 @@ To compile the application it is only neeeded to run the <strong>makefile</stron
 
 ```bash
   $ make
-end
+```
 
 After compiling the application, the binary executable should already exist in the <strong>bin</strong> directory.
 The user can run the application executing the binary file:
 
 ```bash
   $ ./bin/timer arg1 arg2
-end
+```
 
 One exemple of the correct execution of the application is:
 
 ```bash
   $ ./bin/timer 120 30
-end
-
-
-
+```
