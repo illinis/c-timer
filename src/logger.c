@@ -42,7 +42,7 @@ void output_line(char* action, char* time_spent){
 }
 
 void init_logger(){
-  create_directory("../logs");
+  create_directory("logs");
   
   char* filename;
   const char* filename_gen = "-LOG-FILE";
@@ -53,13 +53,14 @@ void init_logger(){
   strcat(filename,filename_gen);
 
   char full_path[256];
-  snprintf(full_path, sizeof(full_path), "%s/%s", "../logs", filename);
+  snprintf(full_path, sizeof(full_path), "%s/%s", "logs", filename);
 
   log_file = fopen(full_path, "a");
   if(log_file == NULL) {
     perror("Error generating log file.\n");
     exit(EXIT_FAILURE);
   }
+  
 }
 
 void terminate_logger(){
