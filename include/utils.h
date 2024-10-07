@@ -15,6 +15,10 @@ void parse_break_time_countdown(int argc, char* argv[], int* break_time);
 
 void create_directory(const char *dir_path);
 
+char* get_current_date();
+
 char* get_current_time();
+
+char* get_current_action(int action);
 
 #endif

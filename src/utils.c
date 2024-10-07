@@ -54,11 +54,49 @@ void create_directory(const char *dir_path) {
   }
 }
 
+char* get_current_date(){
+  time_t current_date = time(NULL);
+  struct tm tm = *localtime(&current_date);    
+
+  char *current_date_str = malloc(64 * sizeof(char));
+  if (current_date_str == NULL) {
+    perror("Failed to allocate memory for current_date_str");
+    exit(EXIT_FAILURE);
+  }
+  snprintf(current_date_str, 64, "%d-%02d-%02d-%02d:%02d:%02d",tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
+
+  return current_date_str;
+}
+
 char* get_current_time(){
   time_t current_time = time(NULL);
-  char *timestamp = ctime(&current_time);
-  timestamp[strlen(timestamp) - 1] = '\0';
+  struct tm tm = *localtime(&current_time);
+  
+  char *current_time_str = malloc(32 * sizeof(char));
+  if (current_time_str == NULL) {
+    perror("Failed to allocate memory for current_time_str");
+    exit(EXIT_FAILURE);
+  } 
+  snprintf(current_time_str, 32, "%02d:%02d:%02d", tm.tm_hour, tm.tm_min, tm.tm_sec);
+    
+  return current_time_str;
+} 
 
-  return timestamp;
+
+char* get_current_action(int action){
+  switch(action){
+    case 0:
+      return "START";
+      break;
+    case 1:
+      return "BREAK";
+      break;
+    case 2:
+      return "PAUSE";
+      break;
+    default:
+      return "INVALID";
+      break;
+  }
 }
 
