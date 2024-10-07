@@ -53,6 +53,7 @@ int main(int argc, char *argv[]) {
  
     g_signal_connect(stop_button, "clicked", G_CALLBACK(stop_timer), NULL);
 
+    g_signal_connect(window, "destroy", G_CALLBACK(terminate_action_log), NULL);
     g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
 
     gtk_widget_show_all(window);
