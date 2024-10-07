@@ -11,5 +11,6 @@
 
 #include "timer.h"
 #include "utils.h"
+#include "logger.h"
 
 #endif
