@@ -13,7 +13,17 @@ typedef struct {
   GtkWidget *window;
 } AppData;
 
+enum Action {
+  START = 0,
+  BREAK,
+  PAUSE
+};
+
 void initial_setup(int argc, char* argv[]);
+
+void change_action(int new_action);
+
+void terminate_action_log();
 
 void activate_on_break();
 
