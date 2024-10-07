@@ -42,3 +42,22 @@ void parse_break_time_countdown(int argc, char* argv[], int* break_time) {
     }
 
 }
+
+void create_directory(const char *dir_path) {
+    mode_t mode = 0755;
+    int result = mkdir(dir_path, mode);
+
+    if (result != 0 && errno != EEXIST) {
+        perror("Error creating directory");
+        exit(EXIT_FAILURE);
+    }
+}
+
+char* get_current_time(){
+    time_t current_time = time(NULL);
+    char *timestamp = ctime(&current_time);
+    timestamp[strlen(timestamp) - 1] = '\0';
+
+    return timestamp;
+}
+
