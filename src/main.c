@@ -1,6 +1,6 @@
 #include "../include/headers.h"
 
-int main(int argc, char *argv[]) { 
+int main(int argc, char *argv[]) {
     GtkWidget *window;
     GtkWidget *vbox;   
     GtkWidget *label;
@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
     
     parse_time_remaining_countdown(argc, argv, &time_remaining_buffer);
     parse_break_time_countdown(argc, argv, &break_time_buffer);
-     
+    
     initial_setup(argc, argv);
 
     gtk_init(&argc, &argv);
@@ -59,6 +59,7 @@ int main(int argc, char *argv[]) {
 
     gtk_main();
 
+    terminate_logger();
     return 0;
 }
 
