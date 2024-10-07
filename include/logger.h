@@ -3,19 +3,11 @@
 
 #include "headers.h"
 
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <errno.h>
-
 typedef struct { 
   char* timer;
   char* break_timer;
   const char *message;
 } LoggerData;
-
-void create_directory(const char *dir_path);
-
-char* get_current_time();
 
 void output_divider();
 
