@@ -12,7 +12,7 @@ void output_divider(){
 
 void output_header(LoggerData logger_data){
   if(log_file != NULL){
-    char *timestamp = get_current_time();
+    char *timestamp = get_current_date();
 
     output_divider();
 
@@ -38,6 +38,7 @@ void output_line(char* action, char* time_spent){
     char* timestamp = get_current_time();
 
     fprintf(log_file, "%%%% %s %%%%\t\t-\t\t%s\t\t-\t\t%%%% %s %%%%\t\t%d\n",timestamp, action, time_spent, n);
+    n++;
   } 
 }
 
@@ -47,7 +48,7 @@ void init_logger(){
   char* filename;
   const char* filename_gen = "-LOG-FILE";
 
-  char *timestamp = get_current_time();
+  char *timestamp = get_current_date();
 
   filename = timestamp;
   strcat(filename,filename_gen);
