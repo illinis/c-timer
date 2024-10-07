@@ -1,6 +1,5 @@
 # c-timer
 
-## Description
 The c-timer is a simple application that mimics a real timer. 
 It should be used passing two arguments through the executable file: the first is the number of minutes which you want to study, work or focus without any interruptions; the second argument is kind of a 'second timer' that will run along the main one.
 The second timer should be used as a 'break counter', as in Pomodoro's technique. It was originally thought to be a reminder to stretch the body, look outside the window, drink some water, etc.
