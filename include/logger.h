@@ -11,7 +11,7 @@ typedef struct {
 
 void output_divider();
 
-void output_header(LoggerData logger_data, char* timestamp);
+void output_header(LoggerData logger_data);
 
 void output_line(char* action, char* time_spent);
 

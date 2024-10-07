@@ -5,12 +5,12 @@ int n = 1;
 
 void output_divider(){
   if(log_file != NULL) {
-    for(int i=0;i<15;++i) fprintf(log_file, "-");
+    for(int i=0;i<150;++i) fprintf(log_file, "-");
     fprintf(log_file, "\n");  
   }
 }
 
-void output_header(LoggerData logger_data, char* timestamp){
+void output_header(LoggerData logger_data){
   if(log_file != NULL){
     char *timestamp = get_current_time();
 
