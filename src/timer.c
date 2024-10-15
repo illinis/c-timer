@@ -57,6 +57,8 @@ void deactivate_on_break(GtkWidget *widget, gpointer user_data){
     ArgData *arg_data = (ArgData *)user_data;
     int argc = arg_data->argc;
     char **argv = arg_data->argv;
+
+    change_action(0);
  
     parse_break_time_countdown(argc, argv, &break_time);
   }
